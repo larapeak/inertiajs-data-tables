@@ -51,6 +51,12 @@ class YourEloquentModel extends Model
 }
 ```
 
+Then publish the Vue components with the following command:
+
+```bash
+php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="assets"
+```
+
 ## Testing
 
 ```bash

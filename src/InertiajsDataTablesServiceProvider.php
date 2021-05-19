@@ -18,4 +18,18 @@ class InertiajsDataTablesServiceProvider extends PackageServiceProvider
             ->name('inertiajs-data-tables')
             ->hasConfigFile();
     }
+
+    public function bootingPackage()
+    {
+
+        if (! $this->app->runningInConsole()) {
+            return;
+        }
+
+        $this->publishes([
+            __DIR__.'./../stubs/DataTable.vue' => resource_path('js/Shared/DataTables/DataTable.vue'),
+            __DIR__.'./../stubs/Body.vue' => resource_path('js/Shared/DataTables/Body.vue'),
+            __DIR__.'./../stubs/Loading.vue' => resource_path('js/Shared/DataTables/Loading.vue'),
+        ], 'assets');
+    }
 }
