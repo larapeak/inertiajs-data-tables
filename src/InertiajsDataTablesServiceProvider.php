@@ -21,7 +21,6 @@ class InertiajsDataTablesServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-
         if (! $this->app->runningInConsole()) {
             return;
         }
