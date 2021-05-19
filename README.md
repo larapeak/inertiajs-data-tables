@@ -1,3 +1,6 @@
+[![Larapeak](https://raw.githubusercontent.com/larapeak/inertiajs-data-tables/master/.github/Header.png)](https://larapeak.com/)
+
+
 # This is my package InertiajsDataTables
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/larapeak/inertiajs-data-tables.svg?style=flat-square)](https://packagist.org/packages/larapeak/inertiajs-data-tables)
