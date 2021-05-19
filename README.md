@@ -1,7 +1,7 @@
 [![Larapeak](https://raw.githubusercontent.com/larapeak/inertiajs-data-tables/master/.github/Header.png)](https://larapeak.com/)
 
 
-# This is my package InertiajsDataTables
+# Create Data Tables in Laravel with Ease!
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/larapeak/inertiajs-data-tables.svg?style=flat-square)](https://packagist.org/packages/larapeak/inertiajs-data-tables)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/larapeak/inertiajs-data-tables/run-tests?label=tests)](https://github.com/larapeak/inertiajs-data-tables/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -19,17 +19,16 @@ You can install the package via composer:
 composer require larapeak/inertiajs-data-tables
 ```
 
-You can publish the config file with:
+You can publish the Vue components with following command:
 
 ```bash
-php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="inertiajs-data-tables-config"
+php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="assets"
 ```
 
-This is the contents of the published config file:
+The Vue components will be published in:
 
-```php
-return [
-];
+```bash
+resources\js\Shared\DataTables
 ```
 
 ## Usage
@@ -54,10 +53,49 @@ class YourEloquentModel extends Model
 }
 ```
 
-Then publish the Vue components with the following command:
+On your Vue page you can use the DataTable component like this:
 
-```bash
-php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="assets"
+```js
+<template>
+    <data-table :tableData:"data" :tableFields="tablefields" :filters="filters" model="posts" slug></data-table>
+</template>
+
+<script>
+    import DataTable from '@/Shared/DataTables/DataTable'
+    
+    export default {
+        components: {
+            DataTable,
+        },
+        
+        props: {
+            data: Array,
+            filters: Object,
+        },
+        
+        data() {
+            return {
+                tableFields: [
+                    {
+                        id: 'field1',
+                        name: 'Field1',
+                        type: 'text',
+                    },
+                    {
+                        id: 'field2',
+                        name: 'Field2',
+                        type: 'text',
+                    },
+                    {
+                        id: 'field3',
+                        name: 'Field3',
+                        type: 'text',
+                    }
+                ]
+            }
+        }
+    }
+</script>
 ```
 
 ## Testing
