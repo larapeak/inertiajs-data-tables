@@ -6,24 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/larapeak/inertiajs-data-tables.svg?style=flat-square)](https://packagist.org/packages/larapeak/inertiajs-data-tables)
 
 ---
-This repo can be used as to scaffold a Laravel package. Follow these steps to get started:
-
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this inertiajs-data-tables
-2. Run "./configure-inertiajs-data-tables.sh" to run a script that will replace all placeholders throughout all the files
-3. Remove this block of text.
-4. Have fun creating your package.
-5. If you need help creating a package, consider picking up our <a href="https://laravelpackage.training">Laravel Package Training</a> video course.
----
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/inertiajs-data-tables.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/inertiajs-data-tables)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package provides a trait that will generate a datatable for your model. It also provides Vue components that you can use with Inertiajs.
 
 ## Installation
 
@@ -33,14 +16,8 @@ You can install the package via composer:
 composer require larapeak/inertiajs-data-tables
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="inertiajs-data-tables-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider" --tag="inertiajs-data-tables-config"
 ```
@@ -54,9 +31,24 @@ return [
 
 ## Usage
 
+Your Eloquent models should use the `Larapeak\InertiajsDataTables\HasSorting` trait.
+
+Here's an example of how to implement the trait:
+
 ```php
-$inertiajs-data-tables = new Larapeak\InertiajsDataTables();
-echo $inertiajs-data-tables->echoPhrase('Hello, Spatie!');
+namespace App\Models;
+
+use Larapeak\InertiajsDataTables\HasSorting;
+use Illuminate\Database\Eloquent\Model;
+
+class YourEloquentModel extends Model
+{
+    use HasSorting;
+
+    public $sortables = [
+        'field1', 'field2', 'field3'
+    ]
+}
 ```
 
 ## Testing
