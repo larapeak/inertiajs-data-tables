@@ -2,7 +2,6 @@
 
 namespace Larapeak\InertiajsDataTables;
 
-use Larapeak\InertiajsDataTables\Commands\InertiajsDataTablesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
