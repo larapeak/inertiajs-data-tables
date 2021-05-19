@@ -15,8 +15,7 @@ trait HasSorting
 
         $direction = $request->get('direction', 'asc');
 
-        if ($field && in_array($field, $sortables) && $direction && in_array($direction, ['asc', 'desc'])) 
-        {
+        if ($field && in_array($field, $sortables) && $direction && in_array($direction, ['asc', 'desc'])) {
             return $query->orderBy($field, $direction);
         }
 
