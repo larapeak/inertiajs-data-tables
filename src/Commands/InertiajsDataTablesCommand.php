@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Larapeak\InertiajsDataTables\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class InertiajsDataTablesCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'inertiajs-data-tables';
 
     public $description = 'My command';
 
