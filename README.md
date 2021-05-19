@@ -1,4 +1,4 @@
-[![Larapeak](https://raw.githubusercontent.com/larapeak/inertiajs-data-tables/master/.github/Header.png)](https://larapeak.com/)
+[![Larapeak](https://raw.githubusercontent.com/larapeak/inertiajs-data-tables/main/.github/Header.png)](https://larapeak.com/)
 
 
 # This is my package InertiajsDataTables
