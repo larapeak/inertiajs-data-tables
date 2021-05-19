@@ -3,8 +3,8 @@
 namespace Larapeak\InertiajsDataTables\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Larapeak\InertiajsDataTables\InertiajsDataTablesServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
