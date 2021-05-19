@@ -17,9 +17,6 @@ class InertiajsDataTablesServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('inertiajs-data-tables')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_inertiajs-data-tables_table')
-            ->hasCommand(InertiajsDataTablesCommand::class);
+            ->hasConfigFile();
     }
 }
