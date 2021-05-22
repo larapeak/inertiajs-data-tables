@@ -11,7 +11,7 @@ trait HasSorting
     {
         $sortables = data_get($this, 'sortables', []);
 
-        $field = $request->get('field', 'created_at');
+        $field = $request->get('field', 'id');
 
         $direction = $request->get('direction', 'asc');
 
